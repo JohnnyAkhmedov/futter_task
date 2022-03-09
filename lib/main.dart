@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_task/pages/home_page.dart';
+import 'package:flutter_task/providers/posts_provider.dart';
 import 'package:flutter_task/providers/users_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (BuildContext context)=>UsersProvider(),)
+    ChangeNotifierProvider(create: (BuildContext context)=>UsersProvider(),),
+    ChangeNotifierProvider(create: (BuildContext context)=>PostsProvider(),)
   ],
   child: const MyApp()));
 }
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Task',
       theme: ThemeData(
 

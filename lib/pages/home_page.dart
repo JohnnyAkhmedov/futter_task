@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_task/pages/posts_list_page.dart';
 import 'package:flutter_task/providers/users_provider.dart';
-import 'package:flutter_task/services/http_service.dart';
 import 'package:provider/provider.dart';
 class HomePage extends StatefulWidget {
 
@@ -20,10 +20,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var _provider = context.watch<UsersProvider>();
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Users'),
+        centerTitle: true,
+      ),
       body: SafeArea(child:Center(
-        child: ListView.builder(
+        child:_provider.isLoading?const CircularProgressIndicator():ListView.builder(
             itemCount:_provider.usersList.length ,
-            itemBuilder: (context, index) => UsersList(context, index))),
+            itemBuilder: (context, index) => usersList(context, index))),
 
       )
     );
@@ -31,11 +35,19 @@ class _HomePageState extends State<HomePage> {
 }
 
 
- Widget UsersList (BuildContext context, int index ){
+ Widget usersList (BuildContext context, int index ){
    var _provider = context.watch<UsersProvider>();
   return Card(
     child: ListTile(
+      leading: CircleAvatar(
+        backgroundImage:AssetImage('assets/images/avataaars(${index+1}).png'),
+        // backgroundColor: Colors.black,
+        radius: 20,
+      ),
       title: Text(_provider.usersList[index].username.toString()),
+      onTap: (){
+      Navigator.push(context, MaterialPageRoute(builder: (_)=>PostsPage(index: index)));
+      },
     ),
   );
  }
