@@ -25,7 +25,12 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: SafeArea(child:Center(
-        child:_provider.isLoading?const CircularProgressIndicator():ListView.builder(
+        child:_provider.isLoading
+            ?const CircularProgressIndicator()
+            :ListView.builder(
+
+            // shrinkWrap: true,
+            itemExtent: 80,
             itemCount:_provider.usersList.length ,
             itemBuilder: (context, index) => usersList(context, index))),
 
@@ -38,16 +43,20 @@ class _HomePageState extends State<HomePage> {
  Widget usersList (BuildContext context, int index ){
    var _provider = context.watch<UsersProvider>();
   return Card(
-    child: ListTile(
-      leading: CircleAvatar(
-        backgroundImage:AssetImage('assets/images/avataaars(${index+1}).png'),
-        // backgroundColor: Colors.black,
-        radius: 20,
+    elevation: 8,
+    child: Center(
+      child: ListTile(
+
+        leading: CircleAvatar(
+          backgroundImage:AssetImage('assets/images/avataaars(${index+1}).png'),
+          // backgroundColor: Colors.black,
+          radius: 25,
+        ),
+        title: Text(_provider.usersList[index].username.toString()),
+        onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (_)=>PostsPage(index: index)));
+        },
       ),
-      title: Text(_provider.usersList[index].username.toString()),
-      onTap: (){
-      Navigator.push(context, MaterialPageRoute(builder: (_)=>PostsPage(index: index)));
-      },
     ),
   );
  }

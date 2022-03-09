@@ -9,6 +9,7 @@ class PostsProvider extends ChangeNotifier{
   List<PostModel> userPosts = [];
   void getPosts(int index)async{
     isLoading = true;
+    userPosts.clear();
     var data =await HttpService.get(HttpService.apiPostsList);
     // I could use the another method of fetching data with the key .then() but I didn't want to add additional lines of codes instead I used the optional one.
     if(data != null){

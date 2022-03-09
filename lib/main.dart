@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_task/pages/home_page.dart';
+import 'package:flutter_task/providers/comments_provider.dart';
 import 'package:flutter_task/providers/posts_provider.dart';
 import 'package:flutter_task/providers/users_provider.dart';
 import 'package:provider/provider.dart';
@@ -7,7 +8,8 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (BuildContext context)=>UsersProvider(),),
-    ChangeNotifierProvider(create: (BuildContext context)=>PostsProvider(),)
+    ChangeNotifierProvider(create: (BuildContext context)=>PostsProvider(),),
+    ChangeNotifierProvider(create: (BuildContext context)=>CommentsProvider(),)
   ],
   child: const MyApp()));
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_task/pages/post_information.dart';
+import 'package:flutter_task/providers/comments_provider.dart';
 import 'package:provider/provider.dart';
 
 
@@ -32,7 +34,10 @@ class _PostsPageState extends State<PostsPage> {
         centerTitle: true,
       ),
       body: Center(
-        child:_provider.isLoading?const CircularProgressIndicator():ListView.builder(
+        child:_provider.isLoading
+            ? const CircularProgressIndicator()
+            :ListView.builder(
+          itemExtent: 80,
             itemCount:_provider.userPosts.length ,
             itemBuilder: (context, index) => postsList(context, index)),
       ),
@@ -43,12 +48,16 @@ class _PostsPageState extends State<PostsPage> {
 Widget postsList (BuildContext context, int index ){
   var _provider = context.watch<PostsProvider>();
   return Card(
-    child: ListTile(
+    elevation: 8,
+    child: Center(
+      child: ListTile(
 
-      title: Text(_provider.userPosts[index].title.toString()),
-      onTap: (){
+        title: Text(_provider.userPosts[index].title.toString()),
+        onTap: (){
 
-      },
+         Navigator.push(context, MaterialPageRoute(builder: (_)=>PostInformation(index: index,postId: _provider.userPosts[index].id,)));
+        },
+      ),
     ),
   );
 }

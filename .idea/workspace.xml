@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e0546a-774d-45d5-8108-ed178dd6619d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/providers/users_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/users_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/post_information.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/post_information.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/posts_list_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/posts_list_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/providers/posts_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/posts_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/services/http_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/http_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +51,6 @@
   </component>
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="true" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -50,26 +68,37 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="251" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1646777837402">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="251" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1646777837402" />
-    <state width="996" height="176" key="GridCell.Tab.0.bottom" timestamp="1646784088906">
+    <state width="996" height="149" key="GridCell.Tab.0.bottom" timestamp="1646842948427">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="996" height="176" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646784088906" />
-    <state width="996" height="176" key="GridCell.Tab.0.center" timestamp="1646784088906">
+    <state width="996" height="149" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646842948427" />
+    <state width="996" height="149" key="GridCell.Tab.0.center" timestamp="1646842948426">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="996" height="176" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1646784088906" />
-    <state width="996" height="176" key="GridCell.Tab.0.left" timestamp="1646784088906">
+    <state width="996" height="149" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1646842948426" />
+    <state width="996" height="149" key="GridCell.Tab.0.left" timestamp="1646842948424">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="996" height="176" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1646784088906" />
-    <state width="996" height="176" key="GridCell.Tab.0.right" timestamp="1646784088906">
+    <state width="996" height="149" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1646842948424" />
+    <state width="996" height="149" key="GridCell.Tab.0.right" timestamp="1646842948426">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="996" height="176" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1646784088906" />
+    <state width="996" height="149" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1646842948426" />
   </component>
 </project>
