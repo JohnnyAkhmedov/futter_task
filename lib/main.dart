@@ -1,23 +1,33 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_task/pages/home_page.dart';
-import 'package:flutter_task/providers/comments_provider.dart';
-import 'package:flutter_task/providers/posts_provider.dart';
+import 'package:flutter_task/pages/signIn_page.dart';
+import 'package:flutter_task/providers/auth_provider.dart';
 import 'package:flutter_task/providers/users_provider.dart';
 import 'package:provider/provider.dart';
-
-void main() {
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (BuildContext context)=>UsersProvider(),),
-    ChangeNotifierProvider(create: (BuildContext context)=>PostsProvider(),),
-    ChangeNotifierProvider(create: (BuildContext context)=>CommentsProvider(),)
-  ],
-  child: const MyApp()));
+class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext? context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
+  }
 }
+void main()=>runApp(
+
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (BuildContext context)=>AuthProvider())
+      ],
+      child:  const MyApp(),
+    )
+   );
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,9 +35,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Task',
       theme: ThemeData(
 
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }
